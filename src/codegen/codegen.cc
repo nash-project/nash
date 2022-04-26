@@ -10,6 +10,29 @@ void codegen::visit(VariableStmt* var){
 	}
 }
 
+
+void codegen::visit(Binary *expr){
+	return;
+}
+void codegen::visit(BoolLiteral*expr){
+	return;
+}
+void codegen::visit(StringLiteral*expr){
+	return;
+}
+void codegen::visit(NumberLiteral*expr){
+
+}
+void codegen::visit(Unary *expr){
+	return;
+}
+void codegen::visit(Grouping*expr){
+	return;
+}
+void codegen::visit(Variable*expr){
+	return;
+}
+
 void codegen::visit(ExpressionStmt* expr){
 	return;
 }

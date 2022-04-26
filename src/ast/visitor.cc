@@ -9,7 +9,7 @@ void BoolLiteral::accept(Visitor *visitor){ visitor->visit(this); }
 void Binary::accept(Visitor*visitor){ visitor->visit(this); }
 void Variable::accept(Visitor*visitor){ visitor->visit(this); }
 
-void ExpressionStmt::accept(StmtVisitor * visitor) { visitor->visit(this); }
-void VariableStmt::accept(StmtVisitor * visitor) { visitor->visit(this); }
+void ExpressionStmt::accept(Visitor * visitor) { visitor->visit(this); }
+void VariableStmt::accept(Visitor * visitor) { visitor->visit(this); }
 
 

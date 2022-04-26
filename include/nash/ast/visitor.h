@@ -10,10 +10,6 @@ public:
 	virtual void visit(Unary *expr) = 0;
 	virtual void visit(Grouping*) = 0;
 	virtual void visit(Variable*) = 0;
-};
-
-class StmtVisitor{
-public:
 	virtual void visit(ExpressionStmt*) = 0;
 	virtual void visit(VariableStmt*) = 0;
 };

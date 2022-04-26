@@ -3,7 +3,6 @@
 #include <string>
 
 class Visitor;
-class StmtVisitor;
 
 enum class ExpreType{
 	Expression = 1,
@@ -107,7 +106,7 @@ private:
 
 class Statement{
 public:
-	virtual void accept(StmtVisitor*) = 0;
+	virtual void accept(Visitor*) = 0;
 	StmtType type = StmtType::Statement;
 };
 
@@ -115,7 +114,7 @@ public:
 class ExpressionStmt: public Statement{
 public:
 	ExpressionStmt(Expression* expr): value(expr) {}
-	void accept(StmtVisitor*);
+	void accept(Visitor*);
 	StmtType type = StmtType::Expression;
 
 	Expression* value;
@@ -124,7 +123,7 @@ public:
 class VariableStmt: public Statement{
 public:
 	VariableStmt(std::string _name, std::string _type, Expression* expr): value(expr), vtype(_type), name(_name)  {}
-	void accept(StmtVisitor*);
+	void accept(Visitor*);
 
 	StmtType type = StmtType::Variable;
 
