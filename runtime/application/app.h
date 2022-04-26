@@ -14,7 +14,7 @@ struct Scope {
     unsigned int size;
 } typedef Scope;
 
-void start();
+Scope *start();
 
 /*
     Cleans the scope
