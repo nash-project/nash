@@ -1,1 +1,8 @@
-var id: int;
+function main(id:int, sat:int):int{
+	var cya:int = 2+4;
+	var got:int = cya + 1;
+	var goat: int;
+	goat = 1;
+	var l: int = id;
+	return l;
+}

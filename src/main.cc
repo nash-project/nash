@@ -10,20 +10,22 @@
 int main(int argc, char** argv){
 	if (argc > 1){
 		std::stringstream input;
-		printf("name: %s\n", argv[1]);
+		std::string source;
 		std::ifstream file(argv[1]);
 		if(file){
 			input << file.rdbuf();
-			std::cout << input.str() << std::endl;
-			Lexer * lexer = new Lexer(input.str());
+			source = input.str();
+			Lexer * lexer = new Lexer(source);
 			
 
 			std::vector<Token*> tokens = lexer->scan();
-			Parser * parser = new Parser(tokens);
+			Parser * parser = new Parser(tokens, source);
 			std::vector<Statement*> ast = parser->parse();
-			codegen *c = new codegen(ast);
+			codegen * c = new codegen(ast);
 			c->gen();
 		}
+		else{
+			std::cout << "Error: file doesn't exist\n";
+		}
 	}
-
 }

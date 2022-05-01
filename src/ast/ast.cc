@@ -2,10 +2,10 @@
 #include <iostream>
 
 
-std::string Binary::asString(){
+std::string BinaryExpr::asString(){
 	return left->asString() + _operator->lexeme + right->asString();
 }
-std::string BoolLiteral::asString(){
+std::string BoolLiteralExpr::asString(){
 	if (value){
 		return "true";
 	}
@@ -13,20 +13,31 @@ std::string BoolLiteral::asString(){
 		return "false";
 	}
 }
-std::string StringLiteral::asString(){
+std::string StringLiteralExpr::asString(){
 	return "\"" + value + "\"";
 }
-std::string NumberLiteral::asString(){
+std::string NumberLiteralExpr::asString(){
 	return std::to_string(value);
 }
 
-std::string Unary::asString(){
+std::string UnaryExpr::asString(){
 	return _operator->lexeme + right->asString();
 }
-std::string Grouping::asString(){
+std::string GroupingExpr::asString(){
 	return expr->asString();
 }
 
-std::string Variable::asString(){
+std::string VariableExpr::asString(){
 	return name->lexeme;
+}
+
+
+std::string CallExpr::asString(){
+	return "None";
+}
+std::string LogicalExpr::asString(){
+	return "None";
+}
+std::string AssignExpr::asString(){
+	return "None";
 }

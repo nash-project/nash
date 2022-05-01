@@ -16,6 +16,7 @@ const static std::map<std::string, TokenType> keywords = {
 	{"var", TokenType::VAR},
 	{"while", TokenType::WHILE},
 	{"int", TokenType::INT_TYPE},
+	{"proto", TokenType::PROTO},
 };
 
 
@@ -29,7 +30,7 @@ std::vector<Token*> Lexer::scan(){
 		scanToken();
 	}
 
-	tokens.push_back(new Token(TokenType::_EOF, ""));
+	tokens.push_back(new Token(TokenType::_EOF, "", line, current));
 	
 	return tokens;
 }
@@ -99,7 +100,7 @@ void Lexer::scanToken(){
       	case '\t':
         	break;
       	case '\n':
-        	line++;
+        	newline();
         	break;
         case '"':
         	string();
@@ -129,8 +130,8 @@ void Lexer::addToken(TokenType tt){
 	addToken(tt, "");
 }
 void Lexer::addToken(TokenType tt, std::string token){
-	tokens.push_back(new Token(tt, token));
-	std::cout << "Token(" << (int)tt << "," << token << ")\n";
+	tokens.push_back(new Token(tt, token, line, pos_c_line));
+	//std::cout << "Token(" << (int)tt << "," << token << ")\n";
 }
 
 bool Lexer::match(char expected){
@@ -145,10 +146,14 @@ char Lexer::peek(){
 	if (isAtEnd()) return '\0';
 	return src[current];
 }
+void Lexer::newline(){
+	line++;
+	pos_c_line = current;
+}
 
 void Lexer::string(){
 	while (peek() != '"' && !isAtEnd()){
-		if (peek() == '\n') line++;
+		if (peek() == '\n') newline();
 		advance();
 	}
 

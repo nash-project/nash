@@ -4,7 +4,7 @@ SRC=./src
 INCLUDES=-I./include/
 
 CPPFLAGS=-Wall -Wextra $(INCLUDES) -g3 -std=c++17
-LDFLAGS=-g3
+LDFLAGS=-g3 `llvm-config --cxxflags --ldflags --system-libs --libs core`
 
 TARGET=nash
 BUILDDIR=bin

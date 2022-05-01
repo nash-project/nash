@@ -17,14 +17,16 @@ enum class TokenType {
 
 	// Keywords.
 	AND, CLASS, ELSE, FALSE, FUN, FOR, IF, NIL, OR,
-	PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE, _EOF,
+	PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE, PROTO ,_EOF,
 
 	INT_TYPE,
 };
 
 class Token{
 public:
-	Token(TokenType t, std::string l): type(t), lexeme(l) {}
+	Token(TokenType t, std::string l, int _line, int _s): type(t), lexeme(l), line(_line), s_col(_s) {}
 	TokenType type;
 	std::string lexeme;
+	int line;
+	int s_col;
 };
