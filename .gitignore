@@ -1,3 +1,4 @@
 *.o
-./output.bc
-./output.ll
+output.bc
+output.ll
+nash
