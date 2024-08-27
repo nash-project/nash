@@ -1,0 +1,6 @@
+function main(): i32{
+    const testFunction: function<i32> = function(): i32 {
+        return 0;
+    }
+    return testFunction();
+}

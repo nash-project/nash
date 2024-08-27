@@ -1,0 +1,6 @@
+function testFunction(): i32 {
+    return 0;
+}
+function main(){
+    return testFunction();
+}

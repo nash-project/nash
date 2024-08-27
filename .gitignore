@@ -1,4 +1,5 @@
-*.o
-output.bc
-output.ll
-nash
+*.exe
+tcc/
+output.c
+output.exe
+node_modules/

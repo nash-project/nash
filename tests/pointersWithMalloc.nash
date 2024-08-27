@@ -1,0 +1,7 @@
+external function malloc(i64): @pointer;
+external function free(@pointer);
+
+function main(): i32 {
+    let memoryAddress: @i8 = malloc(20);
+    defer free(memoryAddress);
+}

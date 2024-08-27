@@ -1,0 +1,7 @@
+external function printf(@i8);
+
+
+function main(): i32 {
+    printf("Successfully called functions");
+    return 0;
+}

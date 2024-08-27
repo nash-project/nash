@@ -1,35 +1,29 @@
-# nash
-Nash Language Compiler
+<div style="text-align:center;">
+<h1>Nash</h1>
+<img src="https://img.shields.io/github/stars/nash-project/nash?label=Stars" alt="stars">
+<img src="https://img.shields.io/github/issues/nash-project/nash?color=green">
+<img src="https://img.shields.io/github/contributors/nash-project/nash">
+</div>
 
-### Required Tools and Packages
- - clang++
- - gnu make
- - llvm
+### What is Nash
 
-### Compiling The Nash Compiler
+Nash is a memory safe compiled programming language (yes, another one). It currently transpiles to C, but the goal is to later use our own custom backends.
 
-Once you have all needed tools and packages, you must run
-```
-make
-```
-Now you must check if the compiler is working by running
-```
-./nash main.nash
-```
-if it completes then it works and you should have a file called output.bc now.
-That is the outputed llvm ir bitcode.
+### Why am I making Nash
 
-### Example Syntax
-For an example checkout the main.nash file
+Im too lazy to learn rust and I don't like the syntax at all. I think typescripts syntax looks cleaner and feels better to write. So I'm going to use typescript inspiration for the syntax, as well as adding my own ideas. This project is not a typescript compiler though, it is it's own language.
 
-### Compiling the output
-In the future nash will do all this automatically, but for now you must do it manually.
-To generate an relocatable object file run
-```
-llc -filetype=obj output.bc
-```
-then you must link the file. In this example i will use gcc as a linker. Run this to link
-```
-gcc output.o -o output
-```
-Then it should be fully linked and working. You can now run it.
+### Goals
+
+    - Support tcc for compiling transpiled code. If we need complex features, we will implement them.
+    - Memory safety
+    - No super complex syntax
+    - Easy and powerful standard library
+    - Can build low level projects (example: Kernels/Os drivers)
+    - Supports dynamic typing (this will cause it be slower  when in use, but it will be an option)
+
+## Contributers
+
+<a href = "https://github.com/madushadhanushka/simple-sqlite/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=nash-project/nash"/>
+</a>

@@ -1,0 +1,9 @@
+{
+    "testFiles": [
+        "functions.nash",
+        "pointersWithMalloc.nash",
+        "anonymousFunctions.nash",
+        "externalFunctions.nash"
+    ],
+    "expectedReturnNumber": 0
+}

@@ -1,0 +1,40 @@
+external function malloc(i64): @pointer;
+external function free(@pointer);
+external function printf(@i8);
+external function strcpy(@i8, @i8);
+external function strcmp(@i8, @i8): i32;
+
+
+//$Type(any): @i32;
+//$Size(any): i32;
+
+struct Hello {
+    let message: @i8 = "hello";
+    function printMessage(){
+        printf("Hello");
+    }
+}
+
+
+function new(size: i64): @pointer {
+    return malloc(size);
+}
+
+function delete(mem: @pointer ) {
+    free(mem);
+}
+
+function main(): i32 {
+    let m: Hello;
+    m.printMessage();
+
+    let memoryAddress: @i8 = new(100);
+    
+    strcpy(memoryAddress, "Hello");
+    
+    printf(memoryAddress);
+    delete(memoryAddress);
+
+
+    return 1;
+}
