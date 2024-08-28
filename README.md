@@ -1,5 +1,4 @@
 <div style="text-align:center;">
-<img src="https://raw.github.com/nash-project/nash/blob/.github/assets/Nash.png" alt="Logo">
 <h1>Nash</h1>
 <img src="https://img.shields.io/github/stars/nash-project/nash?label=Stars" alt="stars">
 <img src="https://img.shields.io/github/issues/nash-project/nash?color=green">
