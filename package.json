@@ -4,9 +4,9 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc --outDir build",
-        "run": "tsc --outdir build && node ./build/index.js ./examples/main.nash"
+        "run": "tsc --outdir build && node ./build/index.js ./examples/main.nash",
+        "test": "node ./build/index.js"
     },
     "author": "",
     "license": "ISC",
