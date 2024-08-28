@@ -6,7 +6,7 @@
     "scripts": {
         "build": "tsc --outDir build",
         "run": "tsc --outdir build && node ./build/index.js ./examples/main.nash",
-        "test": "node ./build/index.js"
+        "test": "node ./build/index.js ./examples/main.nash"
     },
     "author": "",
     "license": "ISC",
