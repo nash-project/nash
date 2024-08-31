@@ -3,3 +3,4 @@ tcc/
 output.c
 output.exe
 node_modules/
+build/
