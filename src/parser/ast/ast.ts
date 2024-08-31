@@ -7,10 +7,14 @@ export class Ast {
     ast: Array<Statement>;
     scope: Scope;
     processor: AstProcessor | null = null;
-    constructor(ast: Array<Statement>, processor: AstProcessor | null = null) {
+    constructor(
+        ast: Array<Statement>,
+        processor: AstProcessor | null = null,
+        scope: Scope | null = null
+    ) {
         this.ast = ast;
         this.processor = processor;
-        this.scope = new Scope(null); // top level
+        this.scope = scope ? scope : new Scope(null); // top level
     }
     setupProcessor(processors: Array<Visitor>) {
         this.processor = new AstProcessor(processors);

@@ -31,18 +31,23 @@ import {
 import { Type } from "./types";
 import { Ast } from "./ast/ast";
 import * as crypto from "node:crypto";
+import { Scope } from "../scope";
 export class Parser {
     tokens: Array<Token>;
     currentTokenIndex: number = 0;
     statements: Array<Statement> = [];
+    currentScope: Scope;
+    topScope: Scope;
     constructor(tokens: Array<Token>) {
         this.tokens = tokens;
+        this.currentScope = new Scope(null);
+        this.topScope = this.currentScope;
     }
     parse(): Ast {
         while (!this.isAtEnd()) {
             this.statements.push(this.declaration());
         }
-        return new Ast(this.statements);
+        return new Ast(this.statements, null, this.topScope);
     }
 
     declaration(): Statement {

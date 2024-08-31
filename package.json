@@ -5,7 +5,7 @@
     "main": "src/index.js",
     "scripts": {
         "build": "tsc --outDir build",
-        "run": "tsc --outdir build && node ./build/index.js ./examples/main.nash",
+        "testWithBuild": "npm run build && npm run test",
         "test": "node ./build/index.js ./examples/main.nash"
     },
     "author": "",

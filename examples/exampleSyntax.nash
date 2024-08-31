@@ -1,9 +1,0 @@
-import std::memory;
-
-function main(){
-    const myNumber: &int = std::memory::new(int);
-    defer { 
-        std::memory::delete(l);
-    }
-    myNumber = 1;
-}
